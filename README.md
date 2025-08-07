@@ -16,7 +16,7 @@ Make sure you have the following installed:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/quickbite-backend.git
+    git clone https://github.com/rafaelods1994/quickbite-backend.git
     cd quickbite-backend
 
 2. Install dependencies
@@ -32,6 +32,16 @@ Make sure you have the following installed:
 4. Run the development server:
     npm run dev
 
+### 🧱 Build & Run Instructions
+
+1. To compile the TypeScript source code into JavaScript
+    npm run build
+
+2. Run the Compiled App
+    npm start
+
+
+
 ### Project Structure
 
 quickbite-backend/
@@ -41,10 +51,12 @@ quickbite-backend/
 │   ├── routes/
 │   ├── config/
 │   └── index.ts
+├── dist/                # Compiled output (generated)
 ├── .env
 ├── tsconfig.json
 ├── package.json
 └── README.md
+
 
 
 🛠️ Technologies

@@ -46,3 +46,14 @@ quickbite-backend/
 ├── package.json
 └── README.md
 
+
+🛠️ Technologies
+    Node.js
+
+    TypeScript
+
+    Express
+
+    Sequelize
+
+    PostgreSQL

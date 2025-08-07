@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: quickbite-db
+    restart: always
+    environment:
+      POSTGRES_USER: quickbite_user
+      POSTGRES_PASSWORD: quickbite_pass
+      POSTGRES_DB: quickbite_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

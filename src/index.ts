@@ -1,30 +1,27 @@
 import express from 'express';
-import User from '../models/user';
-import sequelize from '../config/database';
+import routes from './routes';
+import { sequelize } from './models/db';
+import { setupSwagger } from './swagger';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
 app.use(express.json());
 
-// Basic test route
-app.get('/', (_, res) => {
-  res.send('QuickBite backend is running 🚀');
-});
+// Swagger docs
+setupSwagger(app);
 
-// User creation route
-app.post('/users', async (req, res) => {
-  try {
-    const { name, email, password } = req.body;
-    const user = await User.create({ name, email, password });
-    res.status(201).json(user);
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to create user', details: err });
-  }
-});
+// API routes
+app.use('/api', routes);
 
-sequelize.sync().then(() => {
+const PORT = process.env.PORT || 3000;
+
+async function start() {
+  await sequelize.authenticate();
+  await sequelize.sync({ alter: true });
+
   app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📚 Swagger docs available at http://localhost:${PORT}/api-docs`);
   });
-});
+}
+
+start();

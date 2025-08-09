@@ -45,10 +45,9 @@ const options = {
                     properties: {
                         id: { type: 'integer' },
                         userId: { type: 'integer' },
-                        total: { type: 'number' },
                         status: {
                             type: 'string',
-                            enum: ['pending', 'confirmed', 'preparing', 'delivered', 'cancelled']
+                            enum: ['pending', 'preparing', 'ready', 'completed', 'cancelled']
                         },
                         createdAt: { type: 'string', format: 'date-time' },
                         updatedAt: { type: 'string', format: 'date-time' }
@@ -56,13 +55,12 @@ const options = {
                 },
                 OrderInput: {
                     type: 'object',
-                    required: ['userId', 'total', 'status'],
+                    required: ['userId', 'status'],
                     properties: {
                         userId: { type: 'integer' },
-                        total: { type: 'number' },
                         status: {
                             type: 'string',
-                            enum: ['pending', 'confirmed', 'preparing', 'delivered', 'cancelled']
+                            enum: ['pending', 'preparing', 'ready', 'completed', 'cancelled']
                         }
                     }
                 },

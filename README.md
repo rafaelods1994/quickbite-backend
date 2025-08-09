@@ -76,6 +76,10 @@ src/
 ├── index.ts
 ├── swagger.ts
 
-    
+## 🚀 Run Docker Compose for Setting DB
+- docker-compose up -d
+- docker-compose down -v
+
+
 
 

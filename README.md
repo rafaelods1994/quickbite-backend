@@ -59,7 +59,7 @@ npm install
 - Production (after build):
 ```bash
     npm run build
-    node dist/index.js
+    npm start
 ```
 
 ## 📚 API Documentation

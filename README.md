@@ -1,71 +1,81 @@
-# QuickBite Backend
+# 🍔 QuickBite Backend
 
-Backend service for the QuickBite food ordering platform, built with Node.js, TypeScript, Express, and Sequelize.
+QuickBite is a food ordering API built with Node.js, TypeScript, Express, and Sequelize. It supports user management, dish catalog, order creation, and order item tracking — all documented with Swagger.
 
-## 🚀 Getting Started
+---
 
-### Prerequisites
+## 🚀 Features
 
-Make sure you have the following installed:
+- User registration and listing
+- Dish CRUD operations
+- Order creation and status updates
+- Order item management
+- Swagger API documentation
 
-- [Node.js](https://nodejs.org/) (v18 or later recommended)
-- npm (comes with Node.js)
-- PostgreSQL (local or Docker)
+---
 
-### 📦 Installation
+## 🧰 Tech Stack
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/rafaelods1994/quickbite-backend.git
-    cd quickbite-backend
+- **Node.js** + **TypeScript**
+- **Express** for routing
+- **Sequelize** ORM with PostgreSQL
+- **Swagger** for API docs
+- **Docker** (optional for containerization)
 
-2. Install dependencies
-    npm install
+---
 
-3. Create a .env file:
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/quickbite-backend.git
+cd quickbite-backend
+npm install
+```
+
+## ⚙️ Configuration
+
+- Create a .env file in the root directory:
+```bash
     DB_HOST=localhost
     DB_PORT=5432
     DB_USER=your_db_user
     DB_PASSWORD=your_db_password
     DB_NAME=quickbite
+    PORT=3000
+```
 
-4. Run the development server:
-    npm run dev
+## 🗄️ Database Setup
 
-### 🧱 Build & Run Instructions
+- Run migrations to create tables:
+```bash
+    npx sequelize-cli db:migrate
+```
 
-1. To compile the TypeScript source code into JavaScript
+
+## ▶️ Running the App
+
+- Development (with ts-node):
+    npx ts-node src/index.ts
+- Production (after build):
+```bash
     npm run build
+    node dist/index.js
+```
 
-2. Run the Compiled App
-    npm start
+## 📚 API Documentation
+- Swagger UI is available at:
+    http://localhost:3000/api-docs
 
+## 📁 Project Structure
+migrations/
+src/
+├── controllers/
+├── models/
+├── routes/
+├── config/
+├── index.ts
+├── swagger.ts
 
-
-### Project Structure
-
-quickbite-backend/
-├── src/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── config/
-│   └── index.ts
-├── dist/                # Compiled output (generated)
-├── .env
-├── tsconfig.json
-├── package.json
-└── README.md
+    
 
 
-
-🛠️ Technologies
-    Node.js
-
-    TypeScript
-
-    Express
-
-    Sequelize
-
-    PostgreSQL

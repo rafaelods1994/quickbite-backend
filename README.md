@@ -38,9 +38,9 @@ npm install
 ```bash
     DB_HOST=localhost
     DB_PORT=5432
-    DB_USER=your_db_user
-    DB_PASSWORD=your_db_password
-    DB_NAME=quickbite
+    DB_USER=quickbite_user
+    DB_PASSWORD=quickbite_pass
+    DB_NAME=quickbite_dev
     PORT=3000
 ```
 
